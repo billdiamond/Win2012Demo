@@ -1,0 +1,36 @@
+billdiamond/Win2012Demo:
+  # Distelli Manifest example
+  # this example assumes the build and deploy servers are:
+  # Windows 2012 Server
+
+  PreRelease:
+   - Install-windowsfeature AD-domain-services -Include Management Tools
+   - Import-Module AD DS Deployment
+   - Install-ADDSForest \
+   -CreateDNSDelegation:$false`
+   -DatabasePath "C:WindowsNTDS"`
+   -DomainMode "Win2012R2"`
+   -DomainName "demo.billdiamond.com"`
+   -DomainNetbiosName "DEMOBD"`
+   -ForestMode "Win2012R2"`
+   -InstallDNS:$true`
+   -LogPath "C:WINDOWSNTDS"`
+   -SYSvolPath `C:WindowsSYSVOL"`
+   -Force:$true
+  PkgInclude:
+    - '*'
+
+  PkgExclude:
+    
+
+  PreInstall:
+ 
+
+  PostInstall:
+  
+
+  Env:
+    
+
+  Exec:
+  
